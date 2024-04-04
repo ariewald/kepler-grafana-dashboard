@@ -198,7 +198,7 @@
         {
           "datasource": "prometheus",
           "editorMode": "code",
-          "expr": "( sum by (container_namespace) (increase(kepler_container_joules_total{container_namespace=~\"$namespace\"}[1m])) * $watt_per_second_to_kWh * $PUE ) * $emission_factor * 1000 * 100",
+          "expr": "( sum by (container_namespace) (increase(kepler_container_joules_total{container_namespace=~\"$namespace\",}[1m])) * $watt_per_second_to_kWh * $PUE ) * $emission_factor * 1000 * 100",
           "hide": false,
           "interval": "",
           "legendFormat": "{{container_namespace}}",
@@ -599,7 +599,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "prometheus",
           "value": "P1809F7CD0C75ACF3"
         },
@@ -618,7 +618,7 @@
       {
         "allValue": ".*",
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "All",
           "value": "$__all"
         },
@@ -739,6 +739,6 @@
   "timezone": "browser",
   "title": "Annes Kepler Exporter Dashboard",
   "uid": "anneskepler",
-  "version": 40,
+  "version": 41,
   "weekStart": ""
 }
